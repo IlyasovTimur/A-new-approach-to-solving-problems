@@ -1,10 +1,24 @@
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("A new approach to solving problems");
         task1();
+        task2();
+        
     }
+
+    private static void task2() {
+        System.out.println("Условный оператор. Урок 2. Задание 3");
+        int year = ThreadLocalRandom.current().nextInt(20000);
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.printf("%d год является високосным\n", year);
+        } else {
+            System.out.printf("%d год не является високосным\n", year);
+        }
+    }
+
     private static void task1() {
         System.out.println("Условные операторы.Задание 7. Повышенная сложность.");
 
@@ -21,7 +35,7 @@ public class Main {
         int wantedSum = three.nextInt();
 
         double percent = 1.1; // процентная ставка - ПС
-        double paymentMAX = salary/2; // максимальный платеж - МП
+        double paymentMAX = salary * 0.5; // максимальный платеж - МП
 
         if (salary >= 80_000) {
             percent -= 0.007;
